@@ -42,5 +42,5 @@
   [[x y]]
   (for [nx (range (dec x) (+ x 2))
         ny (range (dec y) (+ y 2))
-        :when (not (and (= x nx) (= y ny)))]
+        :when (not= [x y] [nx ny])]
     [nx ny]))
