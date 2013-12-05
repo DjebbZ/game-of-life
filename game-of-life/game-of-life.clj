@@ -37,22 +37,23 @@
   :draw draw                        ;;Specify the draw fn
   :size [width height])              ;;You struggle to beat the golden ratio
 
-(defn neightbours
+(defn neighbours
   "Calcule les 8 voisines"
   [[x y]]
+  {:post [(= (count %) 8)]}
   (for [nx (range (dec x) (+ x 2))
         ny (range (dec y) (+ y 2))
         :when (not= [x y] [nx ny])]
     [nx ny]))
 
 ;; used to calculate neighbours by applying deltas to its coords
-(def deltas
-  (for [dx [-1 0 1]
-        dy [-1 0 1]
-        :when (not= dx dy 0)]
-    [dx dy]))
+; (def deltas
+;   (for [dx [-1 0 1]
+;         dy [-1 0 1]
+;         :when (not= dx dy 0)]
+;     [dx dy]))
 
-(defn neighbours2 [[x y]]
-  (map (fn [[dx dy]]
-         [(+ x dx) (+ y dy)])
-       deltas))
+; (defn neighbours2 [[x y]]
+;   (map (fn [[dx dy]]
+;          [(+ x dx) (+ y dy)])
+;        deltas))
