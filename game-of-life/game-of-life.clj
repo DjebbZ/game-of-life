@@ -14,20 +14,21 @@
 (def width 400)
 (def height 300)
 
-;; setup
+;; quil's setup
 (defn setup []
   (q/smooth) ;; anti-aliasing
   (q/frame-rate 6))
 
+;; quil's draw
 (defn draw []
   (q/background (q/color 0 0 255))
   (q/stroke-weight 0)
   (q/fill (q/color 255 255 0))
 
-  (doseq [cell @world]
+  (doseq [[x y] @world]
     (let [diam 50
-          x (cell 0)
-          y (cell 1)]
+          x (+ 100 (* x 20))
+          y (+ 100 (* y 20))]
       (q/ellipse x y diam diam))))
 
 (q/defsketch game-of-life                  ;;Define a new sketch named example
