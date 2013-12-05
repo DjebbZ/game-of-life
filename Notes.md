@@ -65,3 +65,8 @@ Vectors and not maps are used for let args :
 2. Same "key" can be used more than once
 
 Let has an implicit do after its vector, so multiple forms can be used.
+
+Core principle in Clojure
+-------------------------
+
+Data should be valid. That's all that matter
