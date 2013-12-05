@@ -37,3 +37,9 @@
   :draw draw                        ;;Specify the draw fn
   :size [width height])              ;;You struggle to beat the golden ratio
 
+(defn neightbours
+  "Calcule les 8 voisines"
+  [[x y]]
+  (for [nx (range (dec x) (+ x 2))
+        ny (range (dec y) (+ y 2))]
+    [nx ny]))
