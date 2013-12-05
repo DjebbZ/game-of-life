@@ -44,3 +44,15 @@
         ny (range (dec y) (+ y 2))
         :when (not= [x y] [nx ny])]
     [nx ny]))
+
+;; used to calculate neighbours by applying deltas to its coords
+(def deltas
+  (for [dx [-1 0 1]
+        dy [-1 0 1]
+        :when (not= dx dy 0)]
+    [dx dy]))
+
+(defn neighbours2 [[x y]]
+  (map (fn [[dx dy]]
+         [(+ x dx) (+ y dy)])
+       deltas))
