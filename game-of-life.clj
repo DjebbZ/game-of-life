@@ -3,8 +3,8 @@
 (ns NightClazz1.core)
 
 ;; cellule
-{:x 0
- :y 1}
+[0 1]
+
 
  ;; voisinage
 
