@@ -70,3 +70,10 @@ Core principle in Clojure
 -------------------------
 
 Data should be valid. That's all that matter
+
+Mutability
+----------
+
+Most of Clojure code is immutable, some the few mutable points are easier to reason with.
+
+swap! changes an atom with a transaction function
