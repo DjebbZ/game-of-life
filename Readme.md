@@ -60,9 +60,11 @@ Don't evaluate their args like functions, this is why they're called special. Ex
 
 ### Let
 
+``` clojure
 (let [deux (inc 1)
       trois (inc deux)]
     (* trois deux))
+```
 
 Vectors and not maps are used for let args :
 1. Maps are not ordered like vectors, so maps can't express dependencies
