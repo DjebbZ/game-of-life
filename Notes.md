@@ -77,3 +77,22 @@ Mutability
 Most of Clojure code is immutable, some the few mutable points are easier to reason with.
 
 swap! changes an atom with a transaction function
+
+Various
+-------
+
+contains? doesn't check presence of values, but of indexes/keys. So doesn't work on seqs.
+
+Don't do (as a beginner)
+--------
+
+loop/recur : higher level constructs are easier for humans and optimized by machines
+recursion : loop like
+mmethods, protocoles
+macros : too complex
+scope dynamiques (set!) : Here be dragons
+lazy-seq
+indices numériques
+atoms partout :
+
+Basically everything we're familiar with, loop-like construct similar to imperative style
