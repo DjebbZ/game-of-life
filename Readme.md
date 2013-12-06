@@ -1,3 +1,7 @@
+Christophe Grand gave an introduction to Clojure at Zenika's Night Clazz. We coded a game of life.
+
+-------------------------------------
+
 Notes
 =====
 
