@@ -46,14 +46,11 @@
         :when (not= [x y] [nx ny])]
     [nx ny]))
 
-;; used to calculate neighbours by applying deltas to its coords
-; (def deltas
-;   (for [dx [-1 0 1]
-;         dy [-1 0 1]
-;         :when (not= dx dy 0)]
-;     [dx dy]))
-
-; (defn neighbours2 [[x y]]
-;   (map (fn [[dx dy]]
-;          [(+ x dx) (+ y dy)])
-;        deltas))
+(defn step [cells]
+  (let [freqs (frequencies
+                (mapcat neighbours cells))
+        alive? (fn [[cell freq]]
+                        (if (contains? cells cell)
+                          (<= 2 freq 3)
+                          (= freq 3)))]
+    (set (keys (filter alive? freqs)))))
